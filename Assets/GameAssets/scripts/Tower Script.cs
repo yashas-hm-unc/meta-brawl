@@ -18,6 +18,7 @@ public class TowerScript : MonoBehaviour
     private void Start()
     {
         brokenTower.SetActive(false);
+        StartCoroutine(Blast());
     }
 
     void Update()
@@ -28,6 +29,12 @@ public class TowerScript : MonoBehaviour
         }
     }
 
+    private IEnumerator Blast()
+    {
+        yield return new WaitForSeconds(5f);
+        damageTaken = 101;
+    }
+    
     private void Explode()
     {
         _blast = true;
