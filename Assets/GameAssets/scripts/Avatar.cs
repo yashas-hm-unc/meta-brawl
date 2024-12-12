@@ -9,20 +9,37 @@ public class Avatar: MonoBehaviour
     public PlayerTypeEnum playerType;
     public Power power1;
     public Power power2;
-
+    private GameObject _healthBar;
+    private GameObject _staminaBar;
     private void Start()
     {
         health = 100;
         stamina = 100;
+        _healthBar = GameObject.FindWithTag("health");
+        _staminaBar = GameObject.FindWithTag("stamina");
         InvokeRepeating(nameof(updateStamina),0f, 1f);
     }
     
+    private void updateBar(GameObject bar, float fill)
+    {
+        var scale = bar.GetComponent<RectTransform>().transform.localScale;
+        bar.GetComponent<RectTransform>().transform.localScale = new Vector3(fill, scale.y, scale.z);
+    }
+
+    private void FixedUpdate()
+    {
+        updateBar(_healthBar, health/100f);
+        updateBar(_staminaBar, stamina/100f);
+    }
+
     private void Update()
     {
         if (health <= 0)
         {
             //TODO: do something kill player
         }
+        
+        
     }
 
     private void OnCollisionEnter(Collision other)
