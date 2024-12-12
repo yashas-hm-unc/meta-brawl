@@ -53,7 +53,7 @@ MonoBehaviour:
   blastParticles: {fileID: 2196580988449918442}
   blastSound: {fileID: 8300000, guid: 04f1c07babbb44de1a9dee891a84a6c4, type: 3}
   audioSource: {fileID: 587617638759802504}
-  damageTaken: 120
+  damageTaken: 0
 --- !u!1 &2972767405181126887
 GameObject:
   m_ObjectHideFlags: 0
