@@ -931,11 +931,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: fe3e74bc-99e2-4405-8e0d-337f536125d5
+  cloudProjectId: 03b64eea-7eb7-460b-870c-0941268680c2
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Meta Brawl
-  organizationId: unity_07cd3c75f56d9c082b46
+  organizationId: yashas_hm
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

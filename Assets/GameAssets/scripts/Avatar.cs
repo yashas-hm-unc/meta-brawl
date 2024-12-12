@@ -16,15 +16,37 @@ public class Avatar: MonoBehaviour
         stamina = 100;
         InvokeRepeating(nameof(updateStamina),0f, 1f);
     }
-
+    
     private void Update()
     {
-       
+        if (health <= 0)
+        {
+            //TODO: do something kill player
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.name is "Avatar")
+        {
+            Power hit = other.gameObject.GetComponent<Power>();
+            if (hit.powerType is PowerTypeEnum.THROWABLE)
+            {
+                health -= hit.damageCost;
+            }
+        }
     }
 
     private void OnCollisionExit(Collision other)
     {
-       
+        if(other.gameObject.name is "Avatar")
+        {
+            Power hit = other.gameObject.GetComponent<Power>();
+            if (hit.powerType is PowerTypeEnum.COMBAT)
+            {
+                health -= hit.damageCost;
+            }
+        }
     }
     
     
@@ -33,7 +55,7 @@ public class Avatar: MonoBehaviour
     {
         if (stamina < 100)
         {
-            stamina += 1;   
+            stamina += 10;   
         }
     }
 }

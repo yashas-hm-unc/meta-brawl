@@ -13,6 +13,7 @@ public class TowerScript : MonoBehaviour
     public AudioSource audioSource;
     public int damageTaken = 0;
     private bool _blast = false;
+    private GameObject _brokenTowerSpawn;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class TowerScript : MonoBehaviour
     private void Explode()
     {
         _blast = true;
+        createSpawnTower();
         originalTower.SetActive(false);
         brokenTower.SetActive(true);
         // brokenTower = Instantiate(brokenTower, originalTower.transform.position, originalTower.transform.rotation);
@@ -49,6 +51,12 @@ public class TowerScript : MonoBehaviour
         StartCoroutine(FadeOutDestroyedObjects(rigidbodies));
     }
 
+    private void createSpawnTower()
+    {
+        _brokenTowerSpawn = Instantiate(brokenTower, brokenTower.transform.position, brokenTower.transform.rotation);
+        _brokenTowerSpawn.SetActive(false);
+    }
+    
     private IEnumerator FadeOutDestroyedObjects(Rigidbody[] rigidbodies)
     {
         WaitForSeconds wait = new WaitForSeconds(0.5f);
@@ -92,12 +100,21 @@ public class TowerScript : MonoBehaviour
         {
             Destroy(renderer.gameObject);
         }
-
-        Destroy(gameObject);
+        StartCoroutine(Respawn());
+        print("test");
     }
 
     private Renderer GetRenderer(Rigidbody body)
     {
         return body.GetComponent<Renderer>();
+    }
+    
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(2f);
+        brokenTower = _brokenTowerSpawn;
+        originalTower.SetActive(true);
+        damageTaken = 0;
+        _blast = false;
     }
 }
