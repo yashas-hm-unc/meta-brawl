@@ -12,7 +12,6 @@ public class gestureStateHandler : MonoBehaviour
     private string a = "";
     void Start()
     {
-
         
     }
 
