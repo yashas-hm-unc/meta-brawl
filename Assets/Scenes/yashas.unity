@@ -8505,6 +8505,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef9c414504fe4a66844654c7795f489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  palmHolderLeft: {fileID: 262270466}
+  palmHolderRight: {fileID: 1320321967}
+  Rasengan: {fileID: 9075922720973618384, guid: f5e556e927369416ea7609ec16c553e7,
+    type: 3}
   mainObject: {fileID: 1854526972}
 --- !u!1 &572144926
 GameObject:
