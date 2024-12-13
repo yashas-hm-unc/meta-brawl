@@ -23,12 +23,6 @@ public class Avatar: MonoBehaviour
         stamina = 100f;
         InvokeRepeating(nameof(updateStamina),0f, 1f);
     }
-    
-    private void updateBar(GameObject bar, float fill)
-    {
-        var scale = bar.GetComponent<RectTransform>().transform.localScale;
-        bar.GetComponent<RectTransform>().transform.localScale = new Vector3(fill, scale.y, scale.z);
-    }
 
     private void FixedUpdate()
     {
@@ -52,7 +46,7 @@ public class Avatar: MonoBehaviour
     {
         if (stamina < 100)
         {
-            stamina += 10;   
+            stamina += 5;   
         }
     }
 }

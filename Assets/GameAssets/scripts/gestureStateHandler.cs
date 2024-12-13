@@ -21,38 +21,47 @@ public class gestureStateHandler : MonoBehaviour
     void Update()
     {
         string a = "";
-        for(int i=0; i< 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             if (gestureState[i])
             {
-                a += i.ToString()+" ";
+                a += i.ToString() + " ";
             }
+
             if (gameObjects[i] != null)
             {
                 if (i == 4)
                 {
-                    gameObjects[i].transform.position = palmHolderRight.transform.position + 0.4f * palmHolderRight.transform.forward;
+                    gameObjects[i].transform.position =
+                        palmHolderRight.transform.position + 0.4f * palmHolderRight.transform.forward;
 
                     gameObjects[i].transform.eulerAngles = palmHolderRight.transform.eulerAngles;
                 }
+
                 if (i == 5)
                 {
-                    gameObjects[i].transform.position = palmHolderLeft.transform.position - 0.4f * palmHolderLeft.transform.forward;
+                    gameObjects[i].transform.position =
+                        palmHolderLeft.transform.position - 0.4f * palmHolderLeft.transform.forward;
                     gameObjects[i].transform.eulerAngles = palmHolderLeft.transform.eulerAngles + 180f * Vector3.right;
                 }
+
                 if (i == 8)
                 {
-                    gameObjects[i].transform.position = palmHolderRight.transform.position - 0.1f * palmHolderRight.transform.up;
+                    gameObjects[i].transform.position =
+                        palmHolderRight.transform.position - 0.1f * palmHolderRight.transform.up;
 
                     gameObjects[i].transform.eulerAngles = palmHolderRight.transform.eulerAngles;
                 }
+
                 if (i == 9)
                 {
-                    gameObjects[i].transform.position = palmHolderLeft.transform.position + 0.1f * palmHolderLeft.transform.up;
+                    gameObjects[i].transform.position =
+                        palmHolderLeft.transform.position + 0.1f * palmHolderLeft.transform.up;
                     gameObjects[i].transform.eulerAngles = palmHolderLeft.transform.eulerAngles;
                 }
             }
         }
+
         //if (count == 0)
         //{
         //    GameObject mjolnir_right = Instantiate(Mjolnir, new Vector3(0, 0, 0), Quaternion.identity);
@@ -71,37 +80,43 @@ public class gestureStateHandler : MonoBehaviour
     public void updateGestureStateTrue(int a)
     {
         gestureState[a] = true;
-        if (a == 8)
+        if (a == 8 && gameObjects[9] is null)
         {
             GameObject rasengan_right = Instantiate(Rasengan, new Vector3(0, 0, 0), Quaternion.identity);
             gameObjects[8] = rasengan_right;
             rasengan_right.transform.SetParent(CameraRig.transform);
             rasengan_right.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            Avatar.Singleton.stamina -= rasengan_right.gameObject.GetComponent<Power>().staminaCost;
             count++;
         }
-        if (a == 9)
+
+        if (a == 9 && gameObjects[8] is null)
         {
             GameObject rasengan_left = Instantiate(Rasengan, new Vector3(0, 0, 0), Quaternion.identity);
             gameObjects[9] = rasengan_left;
             rasengan_left.transform.SetParent(CameraRig.transform);
             rasengan_left.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            Avatar.Singleton.stamina -= rasengan_left.gameObject.GetComponent<Power>().staminaCost;
             count++;
         }
-        if (a == 4)
+
+        if (a == 4 && gameObjects[5] is null)
         {
             GameObject mjolnir_right = Instantiate(Mjolnir, new Vector3(0, 0, 0), Quaternion.identity);
             gameObjects[4] = mjolnir_right;
             mjolnir_right.transform.SetParent(CameraRig.transform);
+            Avatar.Singleton.stamina -= mjolnir_right.gameObject.GetComponent<Power>().staminaCost;
             count++;
         }
-        if (a == 5)
+
+        if (a == 5 && gameObjects[4] is null)
         {
             GameObject mjolnir_left = Instantiate(Mjolnir, new Vector3(0, 0, 0), Quaternion.identity);
             gameObjects[5] = mjolnir_left;
             mjolnir_left.transform.SetParent(CameraRig.transform);
+            Avatar.Singleton.stamina -= mjolnir_left.gameObject.GetComponent<Power>().staminaCost;
             count++;
         }
-
     }
 
     public void updateGestureStateFalse(int a)
@@ -110,21 +125,28 @@ public class gestureStateHandler : MonoBehaviour
         if (a == 8)
         {
             Destroy(gameObjects[8]);
+            gameObjects[8] = null;
             count--;
         }
+
         if (a == 9)
         {
             Destroy(gameObjects[9]);
+            gameObjects[9] = null;
             count--;
         }
+
         if (a == 4)
         {
             Destroy(gameObjects[4]);
+            gameObjects[4] = null;
             count--;
         }
+
         if (a == 5)
         {
             Destroy(gameObjects[5]);
+            gameObjects[5] = null;
             count--;
         }
     }
@@ -133,5 +155,4 @@ public class gestureStateHandler : MonoBehaviour
     {
         return gestureState[a];
     }
-
 }

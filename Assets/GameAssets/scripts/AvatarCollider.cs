@@ -8,9 +8,9 @@ public class AvatarCollider : MonoBehaviour
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.name is "Avatar")
+        Power hit = other.gameObject.GetComponent<Power>();
+        if(hit is not null)
         {
-            Power hit = other.gameObject.GetComponent<Power>();
             if (hit.powerType is PowerTypeEnum.THROWABLE)
             {
                 Avatar.Singleton.health -= hit.damageCost;
@@ -20,9 +20,8 @@ public class AvatarCollider : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        if(other.gameObject.name is "Avatar")
-        {
-            Power hit = other.gameObject.GetComponent<Power>();
+        Power hit = other.gameObject.GetComponent<Power>();
+        if(hit is not null){
             if (hit.powerType is PowerTypeEnum.COMBAT)
             {
                 Avatar.Singleton.health -= hit.damageCost;
