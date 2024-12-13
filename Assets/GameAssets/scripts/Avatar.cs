@@ -9,8 +9,8 @@ public class Avatar: MonoBehaviour
     public PlayerTypeEnum playerType;
     public Power power1;
     public Power power2;
-    private HealthBar _healthBar;
-    private StaminaBar _staminaBar;
+    public HealthBar _healthBar;
+    public StaminaBar _staminaBar;
     private void Start()
     {
         health = 100;

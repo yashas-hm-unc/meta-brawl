@@ -10721,7 +10721,7 @@ MonoBehaviour:
   useRecommendedMSAALevel: 1
   _monoscopic: 0
   _sharpenType: 0
-  enableDynamicResolution: 1
+  enableDynamicResolution: 0
   minDynamicResolutionScale: 0.7
   maxDynamicResolutionScale: 1.3
   minRenderScale: 0.7
@@ -10902,6 +10902,8 @@ MonoBehaviour:
   playerType: 1
   power1: {fileID: 0}
   power2: {fileID: 0}
+  _healthBar: {fileID: 1252204635}
+  _staminaBar: {fileID: 2087240475}
 --- !u!1 &779137801
 GameObject:
   m_ObjectHideFlags: 0
