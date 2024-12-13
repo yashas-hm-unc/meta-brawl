@@ -637,7 +637,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 815271301}
-<<<<<<< Updated upstream
     - target: {fileID: 2420494279801592264, guid: 8888f2e6bd6634fd38ee7bc7be8042d3,
         type: 3}
       propertyPath: m_Value
@@ -657,12 +656,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_MaxValue
       value: 125
-=======
-    - target: {fileID: 44366748801074237, guid: 8888f2e6bd6634fd38ee7bc7be8042d3,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3936468018508983008, guid: 8888f2e6bd6634fd38ee7bc7be8042d3,
         type: 3}
