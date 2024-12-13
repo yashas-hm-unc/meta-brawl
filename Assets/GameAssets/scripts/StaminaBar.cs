@@ -9,7 +9,7 @@ public class StaminaBar : MonoBehaviour
     public Image fill;
 
 
-    public void SetStamina(int stamina)
+    public void SetStamina(float stamina)
     {
         slider.value = stamina;
     }

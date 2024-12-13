@@ -56,8 +56,7 @@ public class interact_handler : MonoBehaviour
 
     public void GetSelectingInteractorId()
     {
-        // Get all of the interactors that are currently selecting
-
+        
         if (distancehandinteractable.SelectingInteractorViews.Any())
         {
 

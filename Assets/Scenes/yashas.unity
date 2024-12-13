@@ -15525,7 +15525,7 @@ MonoBehaviour:
   maxPlayersPerRoom: 10
   lobbyName: lobbyName
   maxRetries: 3
-  retryInterval: {x: 0.1, y: 0.5}
+  retryInterval: {x: 1, y: 3}
 --- !u!114 &1251645053
 MonoBehaviour:
   m_ObjectHideFlags: 0

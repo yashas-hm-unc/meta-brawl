@@ -1,3 +1,4 @@
+using System;
 using GameAssets.scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -5,7 +6,7 @@ using UnityEngine.Serialization;
 public class Power :MonoBehaviour
 {
     public string powerName;
-    public int damageCost;
+    public float damageCost;
     public int staminaCost;
     public int maxObjects;
     public GameObject powerPrefab;

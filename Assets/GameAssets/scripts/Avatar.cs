@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class Avatar: MonoBehaviour
 {
-    public int health;
-    public int stamina;
+    public float health;
+    public float stamina;
     public PlayerTypeEnum playerType;
     public Power power1;
     public Power power2;
-    public HealthBar _healthBar;
-    public StaminaBar _staminaBar;
+    public HealthBar healthBar;
+    public StaminaBar staminaBar;
     private void Start()
     {
-        health = 100;
-        stamina = 100;
-        //_healthBar = GameObject.FindWithTag("health");
-        //_staminaBar = GameObject.FindWithTag("stamina");
+        health = 100f;
+        stamina = 100f;
         InvokeRepeating(nameof(updateStamina),0f, 1f);
     }
     
@@ -28,10 +26,8 @@ public class Avatar: MonoBehaviour
 
     private void FixedUpdate()
     {
-        //updateBar(_healthBar, health/100f);
-        //updateBar(_staminaBar, stamina/100f);
-        _healthBar.SetHealth(health);
-        _staminaBar.SetStamina(stamina);
+        healthBar.SetHealth(health);
+        staminaBar.SetStamina(stamina);
 
     }
 
