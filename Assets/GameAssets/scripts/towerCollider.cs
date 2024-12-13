@@ -7,16 +7,13 @@ public class towerCollider : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.name is "Avatar")
+        Power hit = other.gameObject.GetComponent<Power>();
+        if (hit is not null)
         {
-            Power hit = other.gameObject.GetComponent<Power>();
-            if (hit is not null)
+            if (hit.powerType is PowerTypeEnum.THROWABLE)
             {
-                if (hit.powerType is PowerTypeEnum.THROWABLE)
-                {
-                    TowerScript tower = GetComponentInParent<TowerScript>();
-                    tower.damageTaken += hit.damageCost;
-                }
+                TowerScript tower = GetComponentInParent<TowerScript>();
+                tower.damageTaken = 100f;
             }
         }
     }
@@ -29,7 +26,7 @@ public class towerCollider : MonoBehaviour
             if (hit.powerType is PowerTypeEnum.COMBAT)
             {
                 TowerScript tower = GetComponentInParent<TowerScript>();
-                tower.damageTaken += hit.damageCost;
+                tower.damageTaken = 100f;
             }
         }
     }
