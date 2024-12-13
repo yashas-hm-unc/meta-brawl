@@ -800,7 +800,7 @@ PrefabInstance:
     - target: {fileID: 7231110126537201900, guid: 8888f2e6bd6634fd38ee7bc7be8042d3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00005008
+      value: -0.000045776367
       objectReference: {fileID: 0}
     - target: {fileID: 7532027953550428686, guid: 8888f2e6bd6634fd38ee7bc7be8042d3,
         type: 3}
@@ -830,7 +830,7 @@ PrefabInstance:
     - target: {fileID: 8340056147213051704, guid: 8888f2e6bd6634fd38ee7bc7be8042d3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 11.98
+      value: 11.979996
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7384275520147161771, guid: 8888f2e6bd6634fd38ee7bc7be8042d3, type: 3}
@@ -8509,6 +8509,8 @@ MonoBehaviour:
   palmHolderRight: {fileID: 1320321967}
   Rasengan: {fileID: 9075922720973618384, guid: f5e556e927369416ea7609ec16c553e7,
     type: 3}
+  Mjolnir: {fileID: 5183268080210125874, guid: 538a848e567494c42af73a8df1a51613, type: 3}
+  CameraRig: {fileID: 777330522}
   mainObject: {fileID: 1854526972}
 --- !u!1 &572144926
 GameObject:
