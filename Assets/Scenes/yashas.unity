@@ -5790,10 +5790,7 @@ MonoBehaviour:
   _hand: {fileID: 1152210497}
   _transformFeatureStateProvider: {fileID: 1610449469}
   _transformFeatureConfigs:
-    _values:
-    - _mode: 0
-      _feature: 0
-      _state: 0
+    _values: []
   _transformConfig:
     PositionOffset: {x: 0, y: 0, z: 0}
     RotationOffset: {x: 0, y: 0, z: 0}
@@ -7566,10 +7563,7 @@ MonoBehaviour:
   _hand: {fileID: 1075376807}
   _transformFeatureStateProvider: {fileID: 1277977024}
   _transformFeatureConfigs:
-    _values:
-    - _mode: 0
-      _feature: 0
-      _state: 0
+    _values: []
   _transformConfig:
     PositionOffset: {x: 0, y: 0, z: 0}
     RotationOffset: {x: 0, y: 0, z: 0}

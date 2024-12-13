@@ -29,16 +29,42 @@ public class gestureStateHandler : MonoBehaviour
             }
             if (gameObjects[i] != null)
             {
-                if (i % 2 == 0)
+                if (i == 4)
+                {
+                    gameObjects[i].transform.position = palmHolderRight.transform.position + 0.4f * palmHolderRight.transform.forward;
+
+                    gameObjects[i].transform.eulerAngles = palmHolderRight.transform.eulerAngles;
+                }
+                if (i == 5)
+                {
+                    gameObjects[i].transform.position = palmHolderLeft.transform.position - 0.4f * palmHolderLeft.transform.forward;
+                    gameObjects[i].transform.eulerAngles = palmHolderLeft.transform.eulerAngles + 180f * Vector3.right;
+                }
+                if (i == 8)
                 {
                     gameObjects[i].transform.position = palmHolderRight.transform.position - 0.1f * palmHolderRight.transform.up;
+
+                    gameObjects[i].transform.eulerAngles = palmHolderRight.transform.eulerAngles;
                 }
-                if (i % 2 == 1)
+                if (i == 9)
                 {
                     gameObjects[i].transform.position = palmHolderLeft.transform.position + 0.1f * palmHolderLeft.transform.up;
+                    gameObjects[i].transform.eulerAngles = palmHolderLeft.transform.eulerAngles;
                 }
             }
         }
+        //if (count == 0)
+        //{
+        //    GameObject mjolnir_right = Instantiate(Mjolnir, new Vector3(0, 0, 0), Quaternion.identity);
+        //    GameObject mjolnir_left = Instantiate(Mjolnir, new Vector3(0, 0, 0), Quaternion.identity);
+        //    gameObjects[4] = mjolnir_right;
+        //    gameObjects[5] = mjolnir_left;
+        //    mjolnir_left.transform.SetParent(CameraRig.transform);
+        //    mjolnir_left.transform.position = palmHolderLeft.transform.position + 0.1f * palmHolderLeft.transform.up;
+        //    mjolnir_right.transform.SetParent(CameraRig.transform);
+        //    mjolnir_right.transform.position = palmHolderRight.transform.position - 0.1f * palmHolderRight.transform.up;
+        //    count++;
+        //}
         mainObject.text = a + count.ToString() + "gestures made";
     }
 
@@ -66,7 +92,6 @@ public class gestureStateHandler : MonoBehaviour
             GameObject mjolnir_right = Instantiate(Mjolnir, new Vector3(0, 0, 0), Quaternion.identity);
             gameObjects[4] = mjolnir_right;
             mjolnir_right.transform.SetParent(CameraRig.transform);
-            mjolnir_right.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             count++;
         }
         if (a == 5)
@@ -74,7 +99,6 @@ public class gestureStateHandler : MonoBehaviour
             GameObject mjolnir_left = Instantiate(Mjolnir, new Vector3(0, 0, 0), Quaternion.identity);
             gameObjects[5] = mjolnir_left;
             mjolnir_left.transform.SetParent(CameraRig.transform);
-            mjolnir_left.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             count++;
         }
 
