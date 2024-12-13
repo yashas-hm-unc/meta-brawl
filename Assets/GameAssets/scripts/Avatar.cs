@@ -9,14 +9,14 @@ public class Avatar: MonoBehaviour
     public PlayerTypeEnum playerType;
     public Power power1;
     public Power power2;
-    private GameObject _healthBar;
-    private GameObject _staminaBar;
+    private HealthBar _healthBar;
+    private StaminaBar _staminaBar;
     private void Start()
     {
         health = 100;
         stamina = 100;
-        _healthBar = GameObject.FindWithTag("health");
-        _staminaBar = GameObject.FindWithTag("stamina");
+        //_healthBar = GameObject.FindWithTag("health");
+        //_staminaBar = GameObject.FindWithTag("stamina");
         InvokeRepeating(nameof(updateStamina),0f, 1f);
     }
     
@@ -28,8 +28,11 @@ public class Avatar: MonoBehaviour
 
     private void FixedUpdate()
     {
-        updateBar(_healthBar, health/100f);
-        updateBar(_staminaBar, stamina/100f);
+        //updateBar(_healthBar, health/100f);
+        //updateBar(_staminaBar, stamina/100f);
+        _healthBar.SetHealth(health);
+        _staminaBar.SetStamina(stamina);
+
     }
 
     private void Update()
