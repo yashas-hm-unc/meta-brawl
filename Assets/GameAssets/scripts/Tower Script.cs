@@ -11,7 +11,7 @@ public class TowerScript : MonoBehaviour
     public ParticleSystem blastParticles;
     public AudioClip blastSound;
     public AudioSource audioSource;
-    public int damageTaken = 0;
+    public float damageTaken = 0;
     private bool _blast = false;
     private GameObject _brokenTowerSpawn;
 

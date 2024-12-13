@@ -11,6 +11,12 @@ public class Avatar: MonoBehaviour
     public Power power2;
     public HealthBar healthBar;
     public StaminaBar staminaBar;
+    public static Avatar Singleton;
+
+    private void Awake()
+    {
+        Singleton = this;
+    }
     private void Start()
     {
         health = 100f;
@@ -40,31 +46,6 @@ public class Avatar: MonoBehaviour
         
         
     }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.name is "Avatar")
-        {
-            Power hit = other.gameObject.GetComponent<Power>();
-            if (hit.powerType is PowerTypeEnum.THROWABLE)
-            {
-                health -= hit.damageCost;
-            }
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        if(other.gameObject.name is "Avatar")
-        {
-            Power hit = other.gameObject.GetComponent<Power>();
-            if (hit.powerType is PowerTypeEnum.COMBAT)
-            {
-                health -= hit.damageCost;
-            }
-        }
-    }
-    
     
 
     private void updateStamina()

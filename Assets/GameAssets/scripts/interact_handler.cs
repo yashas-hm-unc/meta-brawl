@@ -65,7 +65,7 @@ public class interact_handler : MonoBehaviour
             {
                 //transform.parent.gameObject.SetActive(false);
                 //Debug.Log(interactorView.Data.ToString());
-                last_selected_kunai = interactorView.Data as MonoBehaviour ? ((MonoBehaviour)interactorView.Data).gameObject : null;
+                last_selected_kunai = (interactorView.Data as MonoBehaviour) ? ((MonoBehaviour)interactorView.Data).gameObject : null;
                 ////Debug.Log("kunai name " + kunai.
                 //HandGrabInteractor kunai = interactorView.Data as HandGrabInteractor;
                 //GameObject interble = kunai.TargetInteractable.

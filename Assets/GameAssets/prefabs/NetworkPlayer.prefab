@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3565756993874513107}
   - component: {fileID: 979922567858201998}
   - component: {fileID: 7338213919137496339}
+  - component: {fileID: 698018803825460510}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -107,6 +108,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &698018803825460510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993639860370791503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260cbf9bb9b7e497ba3f3b8084df6487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4613993543763676563
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 372173928
+  GlobalObjectIdHash: 637573563
   InScenePlacedSourceGlobalObjectIdHash: 372173928
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -220,6 +233,7 @@ GameObject:
   - component: {fileID: 1148762221889398199}
   - component: {fileID: 5463668490268206693}
   - component: {fileID: 5390904265792877742}
+  - component: {fileID: 7850353706372873493}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -313,3 +327,15 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7850353706372873493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6253396533851383681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260cbf9bb9b7e497ba3f3b8084df6487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

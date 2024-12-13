@@ -4819,6 +4819,7 @@ GameObject:
   - component: {fileID: 7504299094201292978}
   - component: {fileID: 8432388607337539899}
   - component: {fileID: 7991835704296329467}
+  - component: {fileID: 4186644135727183919}
   m_Layer: 0
   m_Name: Fire Tower
   m_TagString: Untagged
@@ -4942,6 +4943,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4186644135727183919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3708036174156238019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce41b94a0558d42d0acaf2c4d13ab404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3770592306445825778
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,7 +5003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6737262b-4fab-4779-a38b-fe74012fa505
-  instanceId: 4c807285-76fc-4b7b-85c1-39a60b21eb27
+  instanceId: 5eb7a493-4728-4bf7-a224-ec14eb9d415e
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -10027,7 +10040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6737262b-4fab-4779-a38b-fe74012fa505
-  instanceId: 762d24a8-b4bb-4a0b-89ba-2c3bceda1ec0
+  instanceId: 8de1d9a4-7ca5-4450-bf8e-aad7a57bb8cc
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
